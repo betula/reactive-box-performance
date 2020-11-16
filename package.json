@@ -1,0 +1,34 @@
+{
+  "name": "reactive-box-performance",
+  "version": "1.0.0",
+  "description": "Performance test for reactive-box",
+  "scripts": {
+    "test:mobx": "node tests/mobx.js",
+    "test:reactive-box": "node tests/reactive-box.js",
+    "format": "prettier -w tests/**"
+  },
+  "dependencies": {
+    "mobx": "6.0.4",
+    "reactive-box": "0.1.2",
+    "simple-statistics": "7.3.2"
+  },
+  "devDependencies": {
+    "prettier": "2.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/betula/reactive-box-performance.git"
+  },
+  "keywords": [
+    "reactive-box",
+    "mobx",
+    "performance",
+    "test"
+  ],
+  "author": "Slava Birch <mail@betula.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/betula/reactive-box-performance/issues"
+  },
+  "homepage": "https://github.com/betula/reactive-box-performance#readme"
+}
