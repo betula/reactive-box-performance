@@ -1,4 +1,4 @@
-Simple performance test for reactive-box.
+Simple performance test for [reactive-box](https://github.com/betula/reactive-box).
 
 Schema of test data struct:
 
