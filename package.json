@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "mobx": "6.0.4",
-    "reactive-box": ">=0.5.0",
+    "reactive-box": "0.5.4",
     "simple-statistics": "7.3.2"
   },
   "devDependencies": {
