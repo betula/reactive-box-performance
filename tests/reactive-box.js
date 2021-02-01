@@ -45,13 +45,23 @@ function op(ind) {
   console.log(`Op${ind + 1}:`, total, '\ttime:', time);
 }
 
+const memory_used = process.memoryUsage();
+
 init(8);
 for (let i = 0; i < 10; i++) op(i);
 
-console.log('Init time:', init_time);
 console.log('Boxes:', boxes.length);
 console.log('Selectors:', boxes.length - 2);
+console.log('Init time:', init_time);
+console.log('Work time:');
 console.log('Mean:', stat.mean(times));
 console.log('Median:', stat.median(times));
 console.log('Harmonic mean:', stat.harmonicMean(times));
 console.log('Geometric mean:', stat.geometricMean(times));
+
+console.log("Memory used (MB):");
+for (let key in memory_used) {
+  console.log(
+    `${key}: ${Math.round((memory_used[key] / 1024 / 1024) * 100) / 100}`
+  );
+}

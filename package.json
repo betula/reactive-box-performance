@@ -8,8 +8,8 @@
     "format": "prettier -w tests/**"
   },
   "dependencies": {
-    "mobx": "6.0.4",
-    "reactive-box": "0.5.5",
+    "mobx": "6.1.4",
+    "reactive-box": "0.6.0",
     "simple-statistics": "7.3.2"
   },
   "devDependencies": {
