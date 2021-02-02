@@ -41,18 +41,17 @@ function op(ind) {
   }
   time = performance.now() - time;
   times.push(time);
-
-  console.log(`Op${ind + 1}:`, total, '\ttime:', time);
 }
 
 const memory_used = process.memoryUsage();
 
 init(8);
-for (let i = 0; i < 10; i++) op(i);
+for (let i = 0; i < 5; i++) op(i);
 
 console.log('Boxes:', boxes.length);
 console.log('Selectors:', boxes.length - 2);
 console.log('Init time:', init_time);
+console.log('Operations count:', (boxes.length + boxes.length - 2) * 5);
 console.log('Work time:');
 console.log('Mean:', stat.mean(times));
 console.log('Median:', stat.median(times));
