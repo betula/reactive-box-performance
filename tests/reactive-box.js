@@ -4,8 +4,9 @@ const { box, sel, expr } = require('reactive-box');
 
 const boxes = [];
 let answer;
-let time, init_time;
+let time;
 const times = [];
+const init_times = [];
 
 function level(deep) {
   if (deep === 0) {
@@ -26,9 +27,10 @@ function make(deep) {
 }
 
 function init(deep) {
-  init_time = performance.now();
+  time = performance.now();
   make(deep);
-  init_time = performance.now() - init_time;
+  time = performance.now() - time;
+  init_times.push(time);
 }
 
 function op(ind) {
@@ -45,13 +47,21 @@ function op(ind) {
 
 const memory_used = process.memoryUsage();
 
-init(8);
-for (let i = 0; i < 5; i++) op(i);
+for (let i = 0; i < 10; i++) {
+  boxes.length = 0;
+  init(8);
+  op(i);
+}
 
 console.log('Boxes:', boxes.length);
 console.log('Selectors:', boxes.length - 2);
-console.log('Init time:', init_time);
-console.log('Operations count:', (boxes.length + boxes.length - 2) * 5);
+console.log('');
+console.log('Init time:');
+console.log('Mean:', stat.mean(init_times));
+console.log('Median:', stat.median(init_times));
+console.log('Harmonic mean:', stat.harmonicMean(init_times));
+console.log('Geometric mean:', stat.geometricMean(init_times));
+console.log('');
 console.log('Work time:');
 console.log('Mean:', stat.mean(times));
 console.log('Median:', stat.median(times));
